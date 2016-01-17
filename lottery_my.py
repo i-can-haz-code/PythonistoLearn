@@ -57,17 +57,19 @@ class Lottery(object):
 		self.draw_numbers()
 		if self.cur == self.powerballlist:
 			print('Winner Found!!!!! {}'.format(self.powerballlist))
+			exit()
 		else:
 			print('Nope.... damn... {}'.format(self.cur))
 
-lottery = Lottery()
+if __name__ == '__main__':
+	lottery = Lottery()
 
-print(lottery.powerballpicker())
-for i in range(5):
-	lottery.numbergenerator((2**i)%69)
-print(lottery.powerballvalidation())
-print('My numbers are: {}'.format(lottery.powerballlist))
+	print(lottery.powerballpicker())
+	for i in range(5):
+		lottery.numbergenerator(random.choice(range(70)))
+	print(lottery.powerballvalidation())
+	print('My numbers are: {}'.format(lottery.powerballlist))
 
 
-for i in range(int(raw_input('how many tickets do you buy?'))):
-	lottery.run_sim()
+	for i in range(int(raw_input('how many tickets do you buy?'))):
+		lottery.run_sim()
