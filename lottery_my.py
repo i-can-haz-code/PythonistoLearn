@@ -10,6 +10,9 @@ class Lottery(object):
 	Lottery class to handle things to do.
 	"""
 	def __init__(self):
+		"""
+		sets up lottery class
+		"""
 		try:
 			self.wanttowatch = raw_input('Do you want to watch it work for a winner? (y/n)  ').lower()
 			self.feelinglucky = raw_input('do you want some winning numbers? (y/n):  ').lower()
@@ -24,10 +27,16 @@ class Lottery(object):
 		return
 
 	def powerballpicker(self):
+		"""
+		Picks a powerball 1-26 inclusive
+		"""
 	    pb =  random.randint(1,27)
 	    return pb
 
 	def numbergenerator(self,inti):
+		"""
+		If given a number that makes sense, use it. Otherwise just pick a random one.
+		"""
 		if inti <= 69:
 			if inti not in self.powerballlist:
 				self.powerballlist.append(inti)
@@ -39,11 +48,17 @@ class Lottery(object):
 		return(self.powerballlist)
 
 	def draw_numbers(self):
-		self.cur = random.sample(range(1,70),4)
+		"""
+		randomly pick 5 white balls, and one red ball
+		"""
+		self.cur = random.sample(range(1,70),5)
 		self.cur.append(random.choice(range(27)))
 
 
 	def powerballvalidation(self):
+		"""
+		Near as I can tell this is a rainy day method...
+		"""
 		lenlist = len(self.powerballlist)    
 		while lenlist <5:
 			generated = random.randrange(1,70)
@@ -54,12 +69,16 @@ class Lottery(object):
 				lenlist = lenlist
 		return (lenlist)
 	def run_sim(self):
+		"""
+		Runs one iteration. 
+		"""
 		self.draw_numbers()
 		if self.cur == self.powerballlist:
 			print('Winner Found!!!!! {}'.format(self.powerballlist))
 			exit()
 		else:
 			print('Nope.... damn... {}'.format(self.cur))
+
 
 if __name__ == '__main__':
 	lottery = Lottery()
