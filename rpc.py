@@ -29,6 +29,7 @@ def game():
 			uc = user_choice()
 			canary = 1
 		except ValueError:
+			print('invalid choice.')
 			pass
 	compare(uc,computer_choice())
 if __name__ == '__main__':
