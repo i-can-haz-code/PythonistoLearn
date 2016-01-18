@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
+
+"""
+This is a simple implementation of Rock, Paper, Scissors, Spock, Lizard.
+"""
 import random
 
-choices = ['rock','paper','scissors','spock','lizard']
+__author__ = 'u/i_can_haz_code'
+
+choices = ['rock','paper','scissors','spock','lizard'] # List of choices is not really necessary as we could use beats.keys()
 beats = {'rock':['scissors', 'lizard'], 'paper': ['rock', 'spock'], 'scissors': ['paper','lizard'], 
-'spock':['scissors','rock'], 'lizard': ['spock','paper']}
+'spock':['scissors','rock'], 'lizard': ['spock','paper']} # using lists as the values for this dictionary allows us to not have to write crazy stuff later.
 def user_choice():
 	""" Gets the user choice. If it is invalid. Raise a ValueError """
 	choice = input('Please choose one of the following {} {} {} {} {} : '.format(*choices)).lower()
