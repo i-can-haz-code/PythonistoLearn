@@ -6,8 +6,7 @@ choices = ['rock','paper','scissors']
 beats = {'rock':'scissors','scissors':'paper','paper':'rock'}
 def user_choice():
 	""" Gets the user choice. If it is invalid. Raise a ValueError """
-	choice = input('Please choose one of the following {} {} {} : '.format(choices[0],choices[1],
-		choices[2])).lower()
+	choice = input('Please choose one of the following {} {} {} : '.format(*choices).lower())
 	if choice in choices:
 		return (choice)
 	else:
