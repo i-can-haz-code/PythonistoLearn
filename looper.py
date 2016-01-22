@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+import time
 from __future__ import division
 import requests
 from collections import Counter
@@ -57,6 +59,7 @@ def checker():
 if __name__ == '__main__':
     while True:
         checker()
+        time.sleep(1)
 #assert count_matches(data, data_two)
 
 # Returns the match count found in the intersection ie.(5)
