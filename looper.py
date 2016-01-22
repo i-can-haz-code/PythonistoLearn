@@ -54,7 +54,9 @@ def checker():
             print '-------\n'
     main()
 
-checker()
+if __name__ == '__main__':
+    while True:
+        checker()
 #assert count_matches(data, data_two)
 
 # Returns the match count found in the intersection ie.(5)
